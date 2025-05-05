@@ -40,8 +40,6 @@ hifive.sysbus.e51.SetRegisterUnsafe(11, RegisterValue.Create(0x81000000, 64))
 hifive.LoadPlatformDescriptionFromString("usb: USB.MPFS_USB @ sysbus 0x30020000 { MainIRQ -> plic@0x20 }")
 
 
-Analyzer(hifive.sysbus.uart0).Show()
-
 t = TerminalTester(hifive.sysbus.uart0, 60)
 t.WaitFor(["buildroot login:"], includeUnfinishedLine=True)
 t.WriteLine("root")
